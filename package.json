@@ -1,0 +1,22 @@
+{
+  "author": "Bob Matcuk",
+  "name": "glslify-brunch",
+  "description": "Run glsl files through glslify in brunch",
+  "version": "1.0.0",
+  "homepage": "https://github.com/bmatcuk/glslify-brunch",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmatcuk/glslify-brunch"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "glslify": "^2.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  }
+}
