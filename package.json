@@ -2,6 +2,7 @@
   "author": "Bob Matcuk",
   "name": "glslify-brunch",
   "description": "Run glsl files through glslify in brunch",
+  "keywords": ["glsl", "glslify", "brunch", "brunchio", "webgl"],
   "version": "1.0.0",
   "homepage": "https://github.com/bmatcuk/glslify-brunch",
   "license": "MIT",
