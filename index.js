@@ -22,13 +22,15 @@ GlslifyCompiler.prototype.brunchPlugin = true;
 GlslifyCompiler.prototype.type = 'javascript';
 GlslifyCompiler.prototype.extension = 'glsl';
 GlslifyCompiler.prototype.compile = function(data, filename, callback) {
-  var that = this;
-  var options = {inline: true, basedir: path.dirname(filename)};
+  var options = {basedir: path.dirname(filename)};
   if (this.transform)
     options.transform = this.transform;
-  glslify.bundle(data, options, function(err, source) {
-    callback(err, that.wrapper(filename, source));
-  });
+  try {
+    var src = glslify.compile(data, options);
+    callback(null, this.wrapper(filename, src));
+  } catch (err) {
+    callback(err);
+  }
 };
 
 module.exports = GlslifyCompiler;

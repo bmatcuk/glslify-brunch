@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var Plugin = require('./');
+var Plugin = require('../');
 
 describe('Plugin', function() {
   var plugin;
@@ -21,10 +21,10 @@ describe('Plugin', function() {
       "void main() {" +
       "  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);" +
       "}";
-    var expected = "#define GLSLIFY 1\nvoid main() {  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);}";
+    var expected = "module.exports = \"#define GLSLIFY 1\\nvoid main() {  gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);}\";";
 
     plugin.compile(content, 'test.glsl', function(err, data) {
-      expect(err).not.to.be.ok;
+      expect(err).to.not.be.ok;
       expect(data).to.equal(expected);
       done();
     });
